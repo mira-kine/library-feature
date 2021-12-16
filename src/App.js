@@ -12,17 +12,13 @@ function App() {
         <BrowserRouter>
           <header>
             <NavLink to="/books" data-testid="books-link">
-              Books
+              Catalog
             </NavLink>
           </header>
           <Switch>
             <Route path="/main"></Route>
-            <Route path="/books">
-              <BookList />
-            </Route>
-            <Route path="/books:id">
-              <BookDetail />
-            </Route>
+            <Route exact path="/books" component={BookList} />
+            <Route exact path="/books/:id" component={BookDetail} />
             <Route exact path="/"></Route>
           </Switch>
         </BrowserRouter>

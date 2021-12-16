@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 import Book from '../../components/book/Book';
 import { getBookById } from '../../services/books';
 
-function BookDetail() {
+function BookDetail(props) {
   const [book, setBook] = useState(null);
-  const id = 1;
+  const id = props.match.params.id;
 
   useEffect(() => {
     // TODO: Use id from route
@@ -15,7 +15,7 @@ function BookDetail() {
 
   return (
     <div>
-      <Book book={book} showDetail />;
+      <Book book={book} showDetail />
     </div>
   );
 }
