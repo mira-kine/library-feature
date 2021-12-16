@@ -4,9 +4,10 @@ import { getBookById } from '../../services/books';
 
 function BookDetail() {
   const [book, setBook] = useState(null);
-  const id = `${book.book_id}`; // TODO: Use id from route
+  const id = 1;
 
   useEffect(() => {
+    // TODO: Use id from route
     getBookById(id).then(({ data }) => setBook(data));
   }, [id]);
 
