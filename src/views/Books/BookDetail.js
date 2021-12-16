@@ -3,8 +3,8 @@ import Book from '../../components/book/Book';
 import { getBookById } from '../../services/books';
 
 function BookDetail() {
-  const id = 1; // TODO: Use id from route
   const [book, setBook] = useState(null);
+  const id = `${book.book_id}`; // TODO: Use id from route
 
   useEffect(() => {
     getBookById(id).then(({ data }) => setBook(data));
@@ -12,7 +12,11 @@ function BookDetail() {
 
   if (!book) return <h3>Loading book...</h3>;
 
-  return <Book book={book} showDetail />;
+  return (
+    <div>
+      <Book book={book} showDetail />;
+    </div>
+  );
 }
 
 export default BookDetail;

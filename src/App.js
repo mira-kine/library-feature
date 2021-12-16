@@ -11,9 +11,6 @@ function App() {
         <h1>Library Catalog</h1>
         <BrowserRouter>
           <header>
-            {/* <NavLink to="/main" data-testid="main-link">
-              Home
-            </NavLink> */}
             <NavLink to="/books" data-testid="books-link">
               Books
             </NavLink>
